@@ -1,6 +1,5 @@
 var req = new XMLHttpRequest();
 
-// For 'Exercise 2', you will modify this line:
 req.open("get", "/info1");
 
 req.addEventListener("loadstart", function(){
@@ -8,7 +7,11 @@ req.addEventListener("loadstart", function(){
 });
 
 req.addEventListener("load", function(){
-  // Your code for Exercise 1 goes here.
+  if (this.response === "yes") {
+    alert("Yay!")
+  } else {
+    alert("Aw, shucks!")
+  }
 });
 
 req.send();

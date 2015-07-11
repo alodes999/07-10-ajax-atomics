@@ -1,3 +1,13 @@
 <h1>AJAX Atomics - 01</h1>
 
 <script type="text/javascript" src="/global.js"></script>
+
+
+<h3>1. Why are you able to make requests to /info1 and /info2 even though there are no route handlers for those paths defined in app.rb?</h3>
+<p>We defined an XHR Object at the start, and since we aren't making calls to new views, only request/response calls to the server without leaving the page, we don't need route handlers in Sinatra.</p>
+
+<h3>Why is the XHR object's request path /info1 instead of /public/info1?</h3>
+<p>We can use files in /public like they are in the base directory, just like any css file we reference in Sinatra.  Sinatra reads files in public as if they are in the root directory of the webpage</p>
+
+<h3>Within the addEventListener function, what does this represent?</h3>
+<p>`this` is the XHR Object we are using, which handles the request/response actions.</p>
