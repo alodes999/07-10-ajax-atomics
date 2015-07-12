@@ -1,20 +1,19 @@
-var req = new XMLHttpRequest();
-
-req.open("get", "/path1");
-
-req.addEventListener("load", function(){
-  alert(this.response);
-});
-
-req.send();
-
 //  ---------------------------------------------------------------------------
 
 var myLink = document.getElementById("clicker");
 
 var handleTheClick = function(event){
-  // ?????????
+  var link_to_use = this;
   
+  var req = new XMLHttpRequest();
+
+  req.open("get", link_to_use.getAttribute("href"));
+
+  req.addEventListener("load", function(){
+    link_to_use.innerHTML = req.response;
+  });
+
+  req.send();
   // Prevent the link from refreshing the DOM.
   event.preventDefault();
 }
